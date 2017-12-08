@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JSON Sandbox</title>
+</head>
+
+<body>
+  <ul id ="people"></ul>
+
+  <script>
+    var person = {
+      name: "Davis",
+      age: 28,
+      address:{
+        street: "5 Main Street",
+        city: "Boston"
+      },
+      children:["Brianna", "Nicholas"]
+    }
+
+/*
+    // JSON.stringify gives JSON string that is formatted correctly
+    person = JSON.stringify(person);
+    // JSON.parse takes a JSON string and turns it back into an object
+    person = JSON.parse(person);
+*/
+
+    var people = [
+      {
+        name:"Donna",
+        age:29
+      },
+      {
+        name:"Britty",
+        age:30
+      },
+      {
+        name:"Sarah",
+        age:25
+      }
+    ]
+
+    // console.log(person.address.street);
+    // console.log(person.children[0]);
+    // console.log(people[1].age);
+
+/*
+    // This for loop will go through and log each object to the console
+    for (var i = 0; i < people.length; i++) {
+      console.log(people[i]);
+    }
+
+    // To target specific value in object, add .value
+    for (var i = 0; i < people.length; i++) {
+      console.log(people[i].name);
+    }
+*/
+
+    var output = '';
+    for (var i = 0; i < people.length; i++) {
+      output += '<li>'+people[i].name+'</li>';
+    }
+    document.getElementById('people').innerHTML = output;
+
+  </script>
+
+</body>
+</html>
